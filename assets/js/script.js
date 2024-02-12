@@ -5,10 +5,36 @@ const totalHTML = document.getElementById("totalTasks")
 const completedTasksHTML = document.getElementById("completedTasks")
 const deletedTasksHTML = document.getElementById("elimintedTasks")
 
-let taskList = []
+let taskList = [
+  {id:1, completed: false, name: "Hacer las compras del supermercado", deleted: false},
+  {id:2, completed: false, name: "Sacar a pasear a los 15 perros", deleted: false},
+  {id:3, completed: false, name: "Hacer los desafíos", deleted: false},
+]
 let completed = 0
 let deleted = 0
 let total = 0
+
+
+taskList.forEach((task) => {
+  taskListHTML.innerHTML += `
+  <div class="task ${task.completed ? 'completed' : ''}${task.deleted ? ' deleted' : ''}" id="task${task.id}">
+    <p class="id">${task.id}</p>
+    <p class="input">
+      <label for="check${task.id}">
+      ${task.completed ? '<i class="fa-solid fa-circle-check"></i>' : '<i class="fa-regular fa-circle"></i>'}
+      </label>
+      <input type="checkbox" name="check" id="check${task.id}" style="display: none;" ${task.completed ? 'checked' : ''}>
+    </p>
+    <p class="task-name">${task.name}</p>
+    <label for="del${task.id}" class="delete">
+          X
+        </label>
+        <input type="checkbox" name="check" id="del${task.id}" style="display: none;">
+  </div>`;
+
+});
+
+
 
 newTaskButton.addEventListener("click", () => {
 
