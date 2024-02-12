@@ -10,9 +10,11 @@ let taskList = [
   {id:2, completed: false, name: "Sacar a pasear a los 15 perros", deleted: false},
   {id:3, completed: false, name: "Hacer los desafíos", deleted: false},
 ]
+
 let completed = 0
 let deleted = 0
-let total = 0
+let total = taskList.length
+totalHTML.innerHTML = total
 
 
 taskList.forEach((task) => {
@@ -46,6 +48,26 @@ taskList.forEach((task) => {
       totalHTML.innerHTML = total
       deletedTasksHTML.innerHTML = deleted
       console.log("borrado")
+    }
+  });
+});
+
+taskList.forEach((task) => {
+  let input = document.getElementById(`check${task.id}`);
+  input.addEventListener('change', () => {
+    task.completed = input.checked;
+    let taskElement = document.getElementById(`task${task.id}`);
+    let label = taskElement.querySelector('label');
+    if (task.completed) {
+      taskElement.classList.add('completed');
+      label.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+      completed += 1
+      completedTasksHTML.innerHTML = completed
+    } else {
+      taskElement.classList.remove('completed');
+      label.innerHTML = '<i class="fa-regular fa-circle"></i>';
+      completed -= 1
+      completedTasksHTML.innerHTML = completed
     }
   });
 });
