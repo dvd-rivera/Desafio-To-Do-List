@@ -34,6 +34,22 @@ taskList.forEach((task) => {
 
 });
 
+taskList.forEach((task) => {
+  let deleteBtn = document.getElementById(`del${task.id}`);
+  deleteBtn.addEventListener('click', () => {
+    task.deleted = deleteBtn.checked;
+    let taskElement = document.getElementById(`task${task.id}`);
+    if (task.deleted) {
+      taskElement.classList.add('deleted');
+      deleted += 1
+      total -= 1
+      totalHTML.innerHTML = total
+      deletedTasksHTML.innerHTML = deleted
+      console.log("borrado")
+    }
+  });
+});
+
 
 
 newTaskButton.addEventListener("click", () => {
