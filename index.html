@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="assets/sass/main.css">
+</head>
+<body>
+	
+	<div class="todo-container">
+		<div class="todo-header">
+			To-Do List
+			<img src="https://static.vecteezy.com/system/resources/thumbnails/003/529/153/small/business-to-do-list-flat-icon-modern-style-free-vector.jpg" alt="">
+		</div>
+		<div class="input-container">
+			<input type="text" name="newTask" id="newTaskInput" value="Tarea de Prueba 123">
+			<button id="newTaskBtn">Ingresar Tarea</button>
+		</div>
+		<div class="tasks-status-container">
+			<p>Total: <span id="totalTasks">0</span></p>
+			<p>Realizadas: <span id="completedTasks">0</span></p>
+			<p>Eliminadas: <span id="elimintedTasks">0</span></p>
+		</div>
+		<div class="tasks-container">
+			<div class="tasks-header">
+				<p class="id">ID</p>
+				<p class="input"></p>
+				<p class="task-name">Tarea</p>
+				<p class="delete">Borrar</p>
+			</div>
+			<div class="tasks-list" id="taskList">
+				<!-- <div class="task">
+					<p class="id">12</p>
+					<p class="input">
+						<label for="check">
+							<i class="fa-solid fa-circle-check"></i>
+							<i class="fa-regular fa-circle"></i>
+						</label>
+						<input type="checkbox" name="check" id="check" style="display: none;">
+					</p>
+					<p class="task-name">Learn JavaScript projects</p>
+					<button class="delete">X</button>
+					<label for="check" class="delete">
+						X
+					</label>
+					<input type="checkbox" name="check" id="check" style="display: none;">
+					
+				</div> -->
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://kit.fontawesome.com/038d756320.js" crossorigin="anonymous"></script>
+	<script src="assets/js/script.js"></script>
+</body>
+</html>

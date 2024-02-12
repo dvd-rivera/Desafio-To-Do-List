@@ -1,0 +1,58 @@
+.tasks-container
+    width: 100%
+    +flex-between
+
+    .tasks-header, .task
+        width: 100%
+        padding: 8px
+        +flex-between
+
+        .id, .input
+            width: 8%
+            text-align: center
+
+        .delete
+            width: 10%
+            text-align: center
+
+        .task-name
+            width: 74%
+            padding-left: 6px
+
+
+    .tasks-list
+        width: 100%
+        +flex-center
+
+        .task 
+            width: 100%
+            &:hover
+                background-color: #eee
+                border-radius: 8px
+            p
+                font-weight: 600
+                margin: 0
+
+            label i
+                font-size: 24px
+                cursor: pointer
+
+            .delete
+                border: none
+                background-color: rgba(0, 0, 0, 0)
+                font-weight: 600
+                font-size: 16px
+                cursor: pointer
+
+                &:hover
+                    color: red
+
+            &.completed
+                .task-name
+                    text-decoration: line-through
+                    color: #aaa
+                .input
+                    color: green
+
+            &.deleted
+                display: none
